@@ -1,0 +1,19 @@
+apiVersion: acme.cert-manager.io/v1
+kind: Challenge
+metadata:
+  name: test-challange
+spec:
+  authorizationURL: http://something
+  dnsName: example.com
+  url: http://somethingelse
+  issuerRef:
+    name: no-issuer
+    group: no-group.io
+    kind: nothing
+  solver:
+    http01:
+      ingress:
+        class: notreal
+  type: HTTP-01
+  token: "aaa"
+  key: "bbb.bbb"
